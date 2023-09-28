@@ -13,19 +13,16 @@ class Usuario private constructor(
         private var email: String? = null
         private var tipoUsuario: TipoUsuario = TipoUsuario.BRONCE
 
-        fun setApellido(apellido: String) : Builder {
+        fun setApellido(apellido: String) = apply {
             this.apellido = apellido
-            return this
         }
 
-        fun setEamil(email: String) : Builder {
+        fun setEamil(email: String) = apply {
             this.email = email
-            return this
         }
 
-        fun setTipoUsuario(tipo: TipoUsuario) : Builder {
+        fun setTipoUsuario(tipo: TipoUsuario) = apply {
             this.tipoUsuario = tipoUsuario
-            return this
         }
 
         fun build() = Usuario(id, nombre, apellido, email, tipoUsuario)
