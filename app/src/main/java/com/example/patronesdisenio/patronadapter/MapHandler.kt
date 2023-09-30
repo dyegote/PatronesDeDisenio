@@ -1,7 +1,7 @@
 package com.example.patronesdisenio.patronadapter
 
 class MapHandler {
-    val map: Map1 = Map1()
+    val map: Map2Adapter = Map2Adapter()
 
     fun useMap() {
         map.goToPosition(Pair(0.5, 4.2))
