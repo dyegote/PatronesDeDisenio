@@ -4,6 +4,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import com.example.patronesdisenio.patronbuilder.Usuario
+import com.example.patronesdisenio.patronfactory.Camera
+import com.example.patronesdisenio.patronfactory.CameraFactory
+import com.example.patronesdisenio.patronfactory.CameraType
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,5 +23,11 @@ class MainActivity : AppCompatActivity() {
             .setTitle("Titulo")
             .setMessage("Mensaje")
             .create()
+
+        patronFactory()
+    }
+
+    private fun patronFactory() {
+        val camera: Camera = CameraFactory().getCamera(CameraType.CAMERA1)
     }
 }
