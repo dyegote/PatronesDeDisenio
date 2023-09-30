@@ -1,8 +1,11 @@
 package com.example.patronesdisenio
 
+import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
+import com.example.patronesdisenio.patronabstractfactory.ActivityFactory
 import com.example.patronesdisenio.patronbuilder.Usuario
 import com.example.patronesdisenio.patronfactory.Camera
 import com.example.patronesdisenio.patronfactory.CameraFactory
@@ -29,5 +32,13 @@ class MainActivity : AppCompatActivity() {
 
     private fun patronFactory() {
         val camera: Camera = CameraFactory().getCamera(CameraType.CAMERA1)
+    }
+
+
+    companion object: ActivityFactory() {
+        override fun getIntent(context: Context): Intent {
+            return Intent(context, MainActivity::class.java)
+        }
+
     }
 }
