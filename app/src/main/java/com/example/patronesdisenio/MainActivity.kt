@@ -28,12 +28,16 @@ class MainActivity : AppCompatActivity() {
             .create()
 
         patronFactory()
+
+        patronSingleton()
     }
 
+    private fun patronSingleton() {
+        MiSingleton.ancho = 500
+    }
     private fun patronFactory() {
         val camera: Camera = CameraFactory().getCamera(CameraType.CAMERA1)
     }
-
 
     companion object: ActivityFactory() {
         override fun getIntent(context: Context): Intent {
